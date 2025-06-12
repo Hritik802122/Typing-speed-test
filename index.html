@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Tester</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Typing Speed Test</h1>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-value" id="wpm">0</div>
+                <div class="stat-label">WPM</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="accuracy">100</div>
+                <div class="stat-label">Accuracy %</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="timer">60</div>
+                <div class="stat-label">Seconds</div>
+            </div>
+        </div>
+
+        
+        <input type="text" id="input-field" class="input-field" autofocus>
+
+        <div class="typing-area" id="typing-area">
+            <p id="quote-display">Click here or start typing to begin the test...</p>
+        </div>
+
+        <div class="controls">
+            <button id="restart-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                <span>Restart</span>
+            </button>
+        </div>
+        
+    </div>
+
+</body>
+</html>

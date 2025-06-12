@@ -1,0 +1,219 @@
+
+:root {
+    --background: #121827;
+    --text-primary: #E0E0E0;
+    --text-secondary: #8A94A7;
+    --accent: #42F8F5; 
+    --surface: #1B2133;
+    --error: #F8426C; 
+    --correct: #42F8F5; 
+    
+    --font-ui: 'Poppins', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(66, 248, 245, 0.5);
+}
+
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--surface);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-value {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+
+.input-field {
+    position: absolute;
+    opacity: 0;
+    z-index: -999;
+}
+
+/* --- Typing Area --- */
+.typing-area {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    cursor: text;
+    user-select: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 160px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#quote-display span {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.char.correct {
+    color: var(--correct);
+}
+
+.char.incorrect {
+    color: var(--error);
+    text-decoration: underline;
+    text-decoration-color: var(--error);
+}
+
+/* Blinking Caret */
+.char.active {
+    position: relative;
+}
+.char.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 3px;
+    height: 100%;
+    background-color: var(--accent);
+    animation: blink 1s infinite;
+    border-radius: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+#restart-btn {
+    background-color: var(--accent);
+    color: var(--background);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(66, 248, 245, 0.4);
+}
+
+#restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(66, 248, 245, 0.6);
+}
+
+#restart-btn svg {
+    transition: transform 0.5s ease;
+}
+
+#restart-btn:hover svg {
+    transform: rotate(360deg);
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .stats-container {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .typing-area {
+        font-size: 1.25rem;
+        padding: 1.5rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .typing-area {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
