@@ -5,11 +5,11 @@ A sleek and responsive web application that helps users measure their typing spe
 👉 [View Live Site](https://typing-speed-test-hritik.netlify.app)
 
 # Features:-
-- ⏱️ Real-time typing speed (WPM) calculation  
-- 🎯 Accuracy tracking  
-- 🧠 Random quote/text generator  
-- 📱 Responsive design for mobile and desktop  
-- ⌨️ Keyboard input box.
+-  Real-time typing speed (WPM) calculation  
+-  Accuracy tracking  
+-  Random quote/text generator  
+-  Responsive design for mobile and desktop  
+-  Keyboard input box.
 
 # Tech Stack:-
   HTML
