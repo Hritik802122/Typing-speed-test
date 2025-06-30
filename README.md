@@ -19,4 +19,8 @@ A sleek and responsive web application that helps users measure their typing spe
 👉 [View Live Site](https://typing-speed-test-hritik.netlify.app)
 
 
+# Author 
+- Hritik Roushan
+
+
 
